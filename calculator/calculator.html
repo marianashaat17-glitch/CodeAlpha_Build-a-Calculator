@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="floating-shapes"></div>
+    </div>
+    
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="calculator-header">
+                <h2>Calculator</h2>
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+            
+            <div class="display-container">
+                <div class="previous-operand" id="previousOperand"></div>
+                <input type="text" id="display" readonly placeholder="0">
+            </div>
+            
+            <div class="memory-buttons">
+                <button onclick="memoryStore()" class="memory-btn" title="Memory Store">MS</button>
+                <button onclick="memoryRecall()" class="memory-btn" title="Memory Recall">MR</button>
+                <button onclick="memoryClear()" class="memory-btn" title="Memory Clear">MC</button>
+                <button onclick="memoryAdd()" class="memory-btn" title="Memory Add">M+</button>
+            </div>
+            
+            <div class="function-buttons">
+                <button onclick="clearAll()" class="function-btn clear">AC</button>
+                <button onclick="clearEntry()" class="function-btn">CE</button>
+                <button onclick="backspace()" class="function-btn backspace">⌫</button>
+                <button onclick="appendToDisplay('/')" class="function-btn operator">÷</button>
+            </div>
+            
+            <div class="buttons">
+                <button onclick="squareRoot()" class="advanced-btn">√</button>
+                <button onclick="square()" class="advanced-btn">x²</button>
+                <button onclick="percentage()" class="advanced-btn">%</button>
+                <button onclick="appendToDisplay('*')" class="operator">×</button>
+                
+                <button onclick="appendToDisplay('7')" class="number">7</button>
+                <button onclick="appendToDisplay('8')" class="number">8</button>
+                <button onclick="appendToDisplay('9')" class="number">9</button>
+                <button onclick="appendToDisplay('-')" class="operator">-</button>
+                
+                <button onclick="appendToDisplay('4')" class="number">4</button>
+                <button onclick="appendToDisplay('5')" class="number">5</button>
+                <button onclick="appendToDisplay('6')" class="number">6</button>
+                <button onclick="appendToDisplay('+')" class="operator">+</button>
+                
+                <button onclick="appendToDisplay('1')" class="number">1</button>
+                <button onclick="appendToDisplay('2')" class="number">2</button>
+                <button onclick="appendToDisplay('3')" class="number">3</button>
+                <button onclick="calculate()" class="equals" rowspan="2">=</button>
+                
+                <button onclick="toggleSign()" class="advanced-btn">±</button>
+                <button onclick="appendToDisplay('0')" class="number zero">0</button>
+                <button onclick="appendToDisplay('.')" class="number">.</button>
+            </div>
+            
+            <div class="history-section">
+                <div class="history-header">
+                    <h3>History</h3>
+                    <button onclick="clearHistory()" class="clear-history">Clear</button>
+                </div>
+                <div class="history-list" id="historyList"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
